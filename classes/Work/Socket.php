@@ -9,13 +9,15 @@ class Work_Socket implements adaptor_Socket{
     private $adress = 'socket';
 
     private function generateAdress(){
-        $i = 1;
+         $i = 1;
         $type = '.sock';
-        while (file_exists($this->adress.$type)){
-            $this->adress .= $i;
+        $adress = $this->adress;
+        while (file_exists($adress.$type)){
+            $adress = $this->adress;
+            $adress .= $i;
             $i++;
         }
-        $this->adress .= $type;
+        $this->adress = $adress.$type;
     }
 
     public function __construct() {
