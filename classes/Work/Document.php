@@ -25,9 +25,9 @@ class Work_Document implements adaptor_Document{
     /**
      * Отправка готового документа
      */
-    public function send_document() {
+    public function send_document($socketId) {
         $this->type_socket = new Work_Socket();
-        if ($this->type_socket->createSocket()){
+        if ($this->type_socket->createSocket($socketId)){
             return $this->wait_document();
         }
     }

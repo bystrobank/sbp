@@ -5,8 +5,8 @@
  */
 
 interface adaptor_Socket{
-    public function createSocket();
+    public function createSocket($socketid);
     public function listenSocket();
-    public function writeToSocket($n, $msg);
+    public function writeToSocket($msg);
     public function killSocket();
 }
